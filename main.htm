@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Creator Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Horizontal Dashboard -->
+    <div id="dashboard">
+        <div class="dashboard-item" id="theory">
+            <a href="theory.html">Theory</a>
+        </div>
+        <div class="dashboard-item" id="manual">
+            <a href="manual.html">Manual</a>
+        </div>
+        <div class="dashboard-item" id="challenge">
+            <a href="challenge.html">Challenge</a>
+        </div>
+        <div class="dashboard-item" id="quiz">
+            <a href="quiz.html">Quiz</a>
+        </div>
+        <div class="dashboard-item" id="user-logo">
+            <img src="user_image.png">
+            <a href="users.html">User</a>
+        </div>
+    </div>
+    
+
+    <div id="editor">
+        <div id="controls">
+            <h2>Controls</h2>
+            <!-- Movement controls -->
+            <div class="control-section">
+                <button id="move-left">Move Left</button>
+                <input type="number" id="move-left-distance" placeholder="10">
+            </div>
+            <div class="control-section">
+                <button id="move-right">Move Right</button>
+                <input type="number" id="move-right-distance" placeholder="10">
+            </div>
+            <div class="control-section">
+                <button id="move-up">Move Up</button>
+                <input type="number" id="move-up-distance" placeholder="10">
+            </div>
+            <div class="control-section">
+                <button id="move-down">Move Down</button>
+                <input type="number" id="move-down-distance" placeholder="10">
+            </div>
+            <div class="control-section">
+                <button id="turn-left">Turn Left</button>
+                <input type="number" id="turn-left-angle" placeholder="-15">
+            </div>
+            <div class="control-section">
+                <button id="turn-right">Turn Right</button>
+                <input type="number" id="turn-right-angle" placeholder="15">
+            </div>
+            <button id="run">Run</button>
+
+            <!-- Loop controls -->
+            <h3>Loop</h3>
+            <div class="control-section">
+                <button id="start-loop">Start Loop</button>
+                <input type="number" id="loop-count" placeholder="Number of Iterations">
+            </div>
+
+            <!-- Dropdown for selecting loop operations -->
+            <h3>Loop Operations</h3>
+            <div>
+                <select id="loop-operations" multiple>
+                    <option value="move left">Move Left</option>
+                    <option value="move right">Move Right</option>
+                    <option value="move up">Move Up</option>
+                    <option value="move down">Move Down</option>
+                    <option value="turn left">Turn Left</option>
+                    <option value="turn right">Turn Right</option>
+                </select>
+            </div>
+
+            <!-- Looks controls -->
+            <h3>Looks</h3>
+            <div class="control-section">
+                <input type="text" id="say-message" placeholder="Enter message">
+                <input type="number" id="say-times" placeholder="Number of times" min="1">
+                <button id="say-button">Say</button>
+            </div>
+            <div class="control-section">
+                <label for="think-times">Think Times:</label>
+                <input type="number" id="think-times" placeholder="1">
+                <button id="think">Think</button>
+            </div>
+
+            <!-- Sound controls -->
+                  <!-- Sound controls -->
+        <h3>Sound</h3>
+        <div>
+        <select id="sound-select">
+            <option value="mixkit-cartoon-kitty-begging-meow-92.wav">Sound 1</option>
+           <option value="mixkit-cartoon-little-cat-meow-91.wav">Sound 2</option>
+        </select>
+        <button id="play-sound">Play Sound</button>
+        <button id="stop-sound">Stop All Sounds</button>
+        </div>
+
+        <!-- Size input and button -->
+        
+        <div class="control-group">
+            <label for="size-input">Character Size:</label>
+            <input type="number" id="size-input" min="10" placeholder="Enter size (px)">
+            <button id="change-size-button">Change Size</button>
+        </div>
+
+
+        
+
+            <!-- Conditions Section -->
+            <div class="control-group">
+                <label for="wait-input">Wait Time (seconds):</label>
+                <input type="number" id="wait-input" min="0" placeholder="Enter wait time (seconds)">
+                <button id="wait-button">Wait</button>
+            </div>
+            
+            <div id="wait-timer" class="wait-timer" style="display: none;">
+                Waiting <span id="wait-time">0</span> seconds...
+            </div>            
+            
+                        <!-- Condition Checker Section -->
+            <h3>Conditions</h3>
+            <div id="condition-checker" class="control-section">
+                <input type="text" id="condition-input" placeholder="Enter condition">
+                <button id="check-condition">Check Condition</button>
+                <p id="condition-message"></p>
+            </div>          
+
+
+                <!-- Variables controls -->
+            <h3>Variables</h3>
+            <div class="control-section">
+                <button id="set-variable">Set Variable</button>
+            </div>
+            <div class="control-section">
+                <button id="change-variable">Change Variable</button>
+            </div>
+            <div class="control-section">
+                <button id="show-variable">Show Variable</button>
+            </div>
+            <!-- Save/Load/Undo/Redo -->
+            <h3>Additional Controls</h3>
+            <div class="control-section">
+                <button id="save-workspace">Save Workspace</button>
+                <button id="load-workspace">Load Workspace</button>
+            </div>
+    
+            <div class="control-section">
+                <button id="undo-button">Undo</button>
+                <button id="redo-button">Redo</button>
+            </div>
+         
+        </div>
+        <div id="workspace">
+            <h2>Workspace & Preview</h2>
+        </div>
+        <div id="asset-library">
+            <h2>Asset Library</h2>
+            <div class="asset" draggable="true" id="character1" data-image="character.png">
+                <img src="character.png" alt="Character 1">
+                <span>Cat</span>
+            </div>
+            <div class="asset" draggable="true" id="character2" data-image="Goborender.png">
+                <img src="Goborender.png" alt="Character 2">
+                <span>Goborender</span>
+            </div>
+            
+             <div class="asset" draggable="true" id="character3" data-image="Giga.png">
+                <img src="Giga.png" alt="Character 3">
+                <span>Giga</span>
+            </div>
+            
+            <div class="asset" draggable="true" id="character4" data-image="Nano.png">
+                <img src="Nano.png" alt="Character 4">
+                <span>Nano</span>
+            </div>
+
+            <div class="asset" draggable="true" id="character5" data-image="Blue.png">
+                <img src="Blue.png" alt="Character 5">
+                <span>Blue Cat</span>
+            </div>
+            
+            <div class="asset" draggable="true" id="forest" data-image="forest.png">
+                <img src="forest.png" alt="Forest">
+                <span>Forest</span>
+            </div>
+            
+            
+        
+        <!-- Add this section to your HTML -->
+<div id="saved-actions">
+    <h2>Saved Actions</h2>
+    <ul id="actions-list"></ul>
+</div>
+
+<ul id="actions-list"></ul> </div>
+       
+        <div id="scripts">
+            <h2>Scripts</h2>
+            <textarea id="script-input" placeholder="Type your script here..."></textarea>
+            <button id="run-script">Run Script</button>
+        </div>
+    </div>
+    <button id="play-button">Play</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

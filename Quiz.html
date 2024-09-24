@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Creation Quiz</title>
+    <link rel="stylesheet" href="Quiz.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Game Creation Quiz</h1>
+        <nav>
+            <a href="main.htm">Back to Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="quiz">
+            <h2>Test Your Knowledge!</h2>
+            <form id="quiz-form">
+                <div class="question">
+                    <h3>1. What is the primary purpose of a loop in programming?</h3>
+                    <label><input type="radio" name="q1" value="a"> To store data</label><br>
+                    <label><input type="radio" name="q1" value="b"> To repeat a set of instructions</label><br>
+                    <label><input type="radio" name="q1" value="c"> To end a program</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>2. What is a variable?</h3>
+                    <label><input type="radio" name="q2" value="a"> A fixed value</label><br>
+                    <label><input type="radio" name="q2" value="b"> A placeholder for data that can change</label><br>
+                    <label><input type="radio" name="q2" value="c"> A type of command</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>3. Which command would you use to make a character jump?</h3>
+                    <label><input type="radio" name="q3" value="a"> move up</label><br>
+                    <label><input type="radio" name="q3" value="b"> jump</label><br>
+                    <label><input type="radio" name="q3" value="c"> ascend</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>4. What does the 'if' statement do?</h3>
+                    <label><input type="radio" name="q4" value="a"> It executes a command regardless of conditions</label><br>
+                    <label><input type="radio" name="q4" value="b"> It checks whether a condition is true</label><br>
+                    <label><input type="radio" name="q4" value="c"> It loops a command</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>5. What would the command 'change-size 150' do?</h3>
+                    <label><input type="radio" name="q5" value="a"> Increase the character's size to 150%</label><br>
+                    <label><input type="radio" name="q5" value="b"> Decrease the character's size to 150%</label><br>
+                    <label><input type="radio" name="q5" value="c"> Set the character's size to a fixed value of 150</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>6. How can you check if a variable is equal to a specific value?</h3>
+                    <label><input type="radio" name="q6" value="a"> Use the '==' operator</label><br>
+                    <label><input type="radio" name="q6" value="b"> Use the '=' operator</label><br>
+                    <label><input type="radio" name="q6" value="c"> Use the '===' operator</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>7. In game design, what is the purpose of using conditions?</h3>
+                    <label><input type="radio" name="q7" value="a"> To control character movement</label><br>
+                    <label><input type="radio" name="q7" value="b"> To create interactive elements based on player choices</label><br>
+                    <label><input type="radio" name="q7" value="c"> To determine the game's graphics</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>8. What is the result of an infinite loop?</h3>
+                    <label><input type="radio" name="q8" value="a"> The program runs normally</label><br>
+                    <label><input type="radio" name="q8" value="b"> The program crashes or freezes</label><br>
+                    <label><input type="radio" name="q8" value="c"> The program saves automatically</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>9. How can you store the player's score using a variable?</h3>
+                    <label><input type="radio" name="q9" value="a"> score = 0;</label><br>
+                    <label><input type="radio" name="q9" value="b"> set score to 0;</label><br>
+                    <label><input type="radio" name="q9" value="c"> create score 0;</label><br>
+                </div>
+
+                <div class="question">
+                    <h3>10. What does the 'else' statement do?</h3>
+                    <label><input type="radio" name="q10" value="a"> Executes an alternative command when the 'if' condition is false</label><br>
+                    <label><input type="radio" name="q10" value="b"> Terminates the loop</label><br>
+                    <label><input type="radio" name="q10" value="c"> Runs commands in all cases</label><br>
+                </div>
+
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </form>
+            
+            <div id="quiz-results" style="display:none;">
+                <h3>Your Results</h3>
+                <p id="score"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Game Creator. All rights reserved.</p>
+    </footer>
+
+    <script>
+    function submitQuiz() {
+        let score = 0;
+        const totalQuestions = 10;
+
+        // Answers (correct answers)
+        const answers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'b',
+            q4: 'b',
+            q5: 'a',
+            q6: 'a',
+            q7: 'b',
+            q8: 'b',
+            q9: 'a',
+            q10: 'a'
+        };
+
+        // Check each answer
+        for (let i = 1; i <= totalQuestions; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected && selected.value === answers[`q${i}`]) {
+                score++;
+            }
+        }
+
+        // Display results
+        document.getElementById('quiz-results').style.display = 'block';
+        document.getElementById('score').innerText = `You scored ${score} out of ${totalQuestions}.`;
+    }
+    </script>
+</body>
+</html>

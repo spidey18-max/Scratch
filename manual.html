@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual</title>
+    <link rel="stylesheet" href="manual.css">
+</head>
+<body>
+    <header>
+        <h1>User Manual</h1>
+        <nav>
+            <a href="main.htm">Back to Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Getting Started</h2>
+            <p>Welcome to the Game Creator! To create your game, follow these steps:</p>
+        </section>
+        
+        <section>
+            <h2>1. Adding a Character</h2>
+            <p>To start, drag a character (Cat,Goborender,Nano,Blue Cat,Giga) from the <strong>Asset Library</strong> and drop it into the <strong>Workspace</strong>.</p>
+            <!-- <img src="character-drag-example.png" alt="Drag Character Example"> -->
+        </section>
+        
+        <section>
+            <h2>5. Changing the Workspace Background</h2>
+            <p>You can easily change the background of the workspace to make your game more immersive!</p>
+            <ul>
+                <li>Locate the <strong>Forest</strong> asset in the Asset Library.</li>
+                <li>Click and drag the <strong>Forest</strong> asset into the workspace.</li>
+                <li>Drop it into the workspace area, and it will set the background to a beautiful forest scene!</li>
+            </ul>
+            <p>This feature allows you to personalize your workspace and create an engaging environment for your character to interact with.</p>
+        </section>
+        
+        <section>
+            <h2>2. Using Controls</h2>
+            <p>Once you have a character in the workspace, you can control it using the following options:</p>
+            <ul>
+                <li><strong>Move Left/Right/Up/Down:</strong> Enter a distance and click the corresponding button.</li>
+                <li><strong>Turn Left/Right:</strong> Enter an angle and click the button to turn your character.</li>
+                <li><strong>Loop Operations:</strong> Select operations (e.g., move, turn) to repeat based on user-defined iterations.</li>
+                <li><strong>Variables:</strong> Set, change, and show variables to control game elements.</li>
+                <li><strong>Script Commands:</strong> Write commands directly to control your character.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Loop Operations</h2>
+            <p>You can create loops to repeat actions, but first, you need to enter values for the following controls:</p>
+            <ul>
+                <li>Move Up</li>
+                <li>Move Down</li>
+                <li>Move Left</li>
+                <li>Move Right</li>
+                <li>Turn Left</li>
+                <li>Turn Right</li>
+            </ul>
+            <p>Once you have provided these inputs, you can specify the number of iterations and select the operation you want to repeat. For example:</p>
+            <p><strong>Note:</strong> If you have not set values for the movement or turning controls, the loop will not work.</p>
+        </section>
+        
+
+        <section>
+            <h2>4. Working with Variables</h2>
+            <p>You can create variables to store values that control aspects of your game:</p>
+            <ul>
+                <li><strong>Set Variable:</strong> Input a variable name and a value.</li>
+                <li><strong>Change Variable:</strong> Modify the value of an existing variable.</li>
+                <li><strong>Show Variable:</strong> Display the current value of the variable.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Loading Workspace</h2>
+            <p>Use the <strong>Load Workspace</strong> option to retrieve previously saved configurations. The <strong>Undo</strong> and <strong>Redo</strong> buttons help manage changes made during your session.</p>
+        </section>
+
+        <section>
+            <h2>6. Writing Scripts</h2>
+            <p>In the Scripts section, you can manually write commands. Examples include:</p>
+            <pre><code>
+                loop 5 move right
+                move right 10
+                move left 10
+                move up 10
+                move down 10
+                change-size 100
+                wait 5
+                say hello
+                think thinking
+            </code></pre>
+            <p>This allows for greater flexibility and control over your character's actions.</p>
+        </section>
+
+        <section>
+            <h2>4. Saved Actions</h2>
+            <p>In the <strong>Saved Actions</strong> area, you can view all the operations you have performed. This section helps you keep track of your actions and modify them if needed.</p>
+            <ul>
+                <li>You can see a list of all operations you've executed, such as moving or turning.</li>
+                <li>If you mistakenly added an action that you don't want, you can delete it using the <strong>Delete</strong> button next to the action.</li>
+            </ul>
+            <p>Additionally, you can rearrange your actions:</p>
+            <ul>
+                <li>Simply drag and drop operations to reorder them. For example, if you want <strong>Move Down</strong> to come after <strong>Move Left</strong>, just drag it into place!</li>
+            </ul>
+            <p>This feature allows you to customize your actions easily and make your character perform tasks in the exact order you want.</p>
+        </section>
+        
+
+        <section>
+            <h2>7. Running Your Game</h2>
+            <p>After setting up your character, controls, loops, and variables, click the <strong>Play</strong> button to see your character execute the operations you've defined.</p>
+            <!-- <img src="play-button-example.png" alt="Play Button Example"> -->
+        </section>
+
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Experiment with different movements and actions to see how your character behaves.</li>
+                <li>Use loops for repetitive actions to simplify your script.</li>
+                <li>Save your workspace frequently to avoid losing your progress.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Game Creator. All rights reserved.</p>
+    </footer>
+</body>
+</html>

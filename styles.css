@@ -1,0 +1,424 @@
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: linear-gradient(to bottom, #e0f2f1, #b2dfdb); 
+    height: 100vh;
+    overflow-y: auto; 
+}
+
+
+#dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #4caf50, #2e7d32); 
+    color: #ffffff;
+    padding: 5px 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+
+.dashboard-item {
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s; 
+    padding: 5px; 
+    border-radius: 8px; 
+}
+
+.dashboard-item:hover {
+    background-color: #fbeb0e;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.05); 
+}
+
+
+#user-logo img {
+    max-height: 40px; 
+}
+
+
+#editor {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 30px); 
+    max-width: 1300px; 
+    height: calc(100vh - 60px); 
+    margin: 10px auto; 
+    background: #ffffff; 
+    border: 2px solid #4caf50; 
+    border-radius: 8px; 
+    padding: 10px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    overflow: auto; 
+    box-sizing: border-box; 
+
+}
+#controls {
+    width: 600px; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px; 
+    background: linear-gradient(to right, #8ff44b, #66bb6a); 
+    border-radius: 8px; 
+    padding: 25px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff; 
+    overflow-y: auto; 
+}
+
+
+#controls h2 {
+    margin-bottom: 20px; 
+    color: #0c0101; /* Dark color for text */
+    font-size: 28px; /* Increased font size */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Controls section */
+.control-section {
+    margin-top: 20px; /* Increased margin */
+    text-align: center;
+}
+
+.control-section input {
+    margin-left: 15px; /* Increased margin */
+    padding: 12px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 8px; /* Increased border radius */
+    background: linear-gradient(to right, #ffffff, #f5f5f5); /* Gradient background */
+}
+
+/* Controls buttons */
+#controls button {
+    margin-top: 20px; /* Increased margin */
+    padding: 12px 20px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    background: linear-gradient(to right, #ebebeb, #f2f2f2); /* Bright gradient */
+    color: #000000; /* Text color */
+    border: 2px solid #ff9800; /* Bright orange border */
+    border-radius: 8px; /* Slightly smaller border radius */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+#controls button:hover {
+    background: linear-gradient(to right, #14d4ca, #00bcd4); /* Fun, bright gradient on hover */
+    color: #ffffff; /* Change text color for better contrast */
+    border-color: #009688; /* Darker border color for contrast */
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Slightly reduced shadow */
+}
+
+/* Additional controls styles */
+#controls .additional-controls {
+    margin-top: 20px; /* Increased margin */
+}
+
+#controls .additional-controls button {
+    background: linear-gradient(to right, #f5f5f5, #e0e0e0); /* Gradient background */
+    color: #000000; /* Text color */
+    border: 2px solid #cccccc; /* Light gray border */
+    padding: 15px 25px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    border-radius: 8px; /* Increased border radius */
+}
+
+#controls .additional-controls button:hover {
+    background: linear-gradient(to right, #eeeeee, #e0e0e0); /* Slightly darker gradient */
+    border-color: #b3b3b3; /* Darker gray border */
+}
+
+/* Workspace section */
+#workspace {
+    width: calc(100% - 480px); 
+    height: 600px; 
+    border: 1px solid #000;
+    position: relative; 
+    overflow: hidden; 
+    background-color: #f0f0f0; 
+    z-index: 1; 
+}
+/* Asset library section */
+#asset-library {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-top: 10px; 
+    justify-content: center; 
+}
+
+/* Individual asset styling */
+.asset {
+    width: 100px; 
+    height: 100px; 
+    text-align: center;
+    background: linear-gradient(to bottom, #c8e6c9, #a5d6a7); 
+    border: 2px solid #a5d6a7;
+    border-radius: 8px; 
+    cursor: pointer; 
+    padding: 8px; 
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4); 
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+   justify-content: center; 
+}
+
+/* On hover effects for assets */
+.asset:hover {
+    background: linear-gradient(to bottom, #a5d6a7, #c8e6c9); /* Inverted gradient on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    transform: scale(1.1); /* Slightly larger on hover */
+}
+
+.asset img {
+    max-width: 80px; /* Ensure image fits within the asset container */
+    max-height: 80px; /* Maintain aspect ratio */
+}
+
+
+/* Scripts section */
+#scripts {
+    flex-basis: 450px; /* Further increased width */
+    border: 2px solid #4caf50; /* Vibrant green border */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Reduced border radius */
+    padding: 15px; /* Increased padding */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+/* Scripts textarea */
+#scripts textarea {
+    width: 100%;
+    height: 180px; /* Increased height */
+    border: 2px solid #4caf50; /* Vibrant green border */
+    border-radius: 6px; /* Reduced border radius */
+    padding: 12px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Scripts buttons */
+#scripts button {
+    display: block;
+    margin-top: 15px; /* Increased margin */
+    padding: 12px 20px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    background: linear-gradient(to right, #ffffff, #e0e0e0); /* Gradient background */
+    color: #000000;
+    border: 2px solid #4caf50; /* Vibrant green border */
+    border-radius: 8px; /* Reduced border radius */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#scripts button:hover {
+    background-color: #e0e0e0;
+    border-color: #388e3c; /* Darker green border */
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+/* Additional controls styles */
+#controls .additional-controls {
+    margin-top: 15px; /* Increased margin */
+}
+
+#controls .additional-controls button {
+    background: linear-gradient(to right, #f5f5f5, #e0e0e0); /* Gradient background */
+    color: #000000;
+    border: 2px solid #cccccc; /* Light gray border */
+    padding: 12px 20px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    border-radius: 8px; /* Increased border radius */
+}
+
+#controls .additional-controls button:hover {
+    background: linear-gradient(to right, #eeeeee, #e0e0e0); /* Slightly darker gradient */
+    border-color: #b3b3b3; /* Darker gray border */
+}
+
+/* Play button styles */
+#play-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    cursor: pointer;
+    background: linear-gradient(to right, #4caf50, #2e7d32); /* Gradient background */
+    color: #ffffff;
+    border: 2px solid #4caf50; /* Vibrant green border */
+    border-radius: 8px; /* Reduced border radius */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#play-button:hover {
+    background-color: #388e3c; /* Darker green background */
+    border-color: #388e3c; /* Darker green border */
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+}
+
+/* Loader styles */
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #4caf50;
+    border-radius: 50%;
+    width: 60px; /* Increased size */
+    height: 60px; /* Increased size */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Saved Actions Styles */
+#saved-actions {
+    width: 250px; /* Further increased width */
+    height: 250px;
+    background: #f0f0f0; /* Background color */
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 8px; /* Reduced border radius */
+    margin: 20px;
+    padding: 20px; /* Increased padding */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+#saved-actions h2 {
+    margin-top: 0;
+    color: #0c0101; /* Dark color for text */
+    font-size: 26px; /* Increased font size */
+}
+
+#actions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#actions-list li {
+    margin-bottom: 15px; /* Increased bottom margin */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+}
+
+#actions-list button {
+    background: #f44336; /* Red color for delete */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Increased button padding */
+    cursor: pointer;
+}
+
+#actions-list button:hover {
+    background: #d32f2f; /* Darker red on hover */
+}
+
+/* General styling for workspace assets */
+.workspace-asset {
+    position: absolute; /* Ensure it's absolutely positioned */
+    z-index: 1000; /* High z-index to be above other elements */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box-shadow */
+    background: none; /* Remove background if any */
+}
+
+/* Styling for the wait timer message */
+.wait-timer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: lightcoral;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+/* Workspace assets images */
+.workspace-asset img {
+    display: block;
+    max-width: 100%; /* Ensures the image fits within the container */
+    height: auto;    /* Maintains aspect ratio */
+}
+/* Styling for the wait timer message */
+.wait-timer {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: lightcoral;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px; /* Adjust size as needed */
+}
+
+/* General styles for buttons */
+button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline block layout */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margins */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Styles for the "Move" button specifically */
+#move-button {
+    background-color: #008CBA; /* Blue background for "Move" button */
+}
+
+#move-button:hover {
+    background-color: #005f73; /* Darker blue on hover */
+}
+
+/* Style for the feedback message area */
+#feedback-message {
+    background-color: #f1f1f1; /* Light grey background */
+    border: 1px solid #ccc; /* Light border */
+    padding: 15px; /* Padding */
+    margin-top: 20px; /* Margin at the top */
+    border-radius: 5px; /* Rounded corners */
+    color: #333; /* Dark text color */
+    font-size: 16px; /* Font size */
+}
+#dashboard .dashboard-item a {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Change color */
+    padding: 10px; /* Add padding */
+}
+#dashboard .dashboard-item a:hover {
+    color: #f00101; /* Change color on hover */
+}
+
+
+
+
+
