@@ -436,3 +436,19 @@ button {
     max-width: 100%; 
     height: auto;
 }
+#strings-section {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.control-section {
+    margin-bottom: 15px;
+}
+
+#char-check-section {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
