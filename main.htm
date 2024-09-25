@@ -8,7 +8,7 @@
     
 </head>
 <body>
-    <!-- Horizontal Dashboard -->
+    
     <div id="dashboard">
         <div class="dashboard-item" id="theory">
             <a href="theory.html">Theory</a>
@@ -32,7 +32,7 @@
     <div id="editor">
         <div id="controls">
             <h2>Controls</h2>
-            <!-- Movement controls -->
+            
             <div class="control-section">
                 <button id="move-left">Move Left</button>
                 <input type="number" id="move-left-distance" placeholder="10">
@@ -59,14 +59,14 @@
             </div>
             <button id="run">Run</button>
 
-            <!-- Loop controls -->
+           
             <h3>Loop</h3>
             <div class="control-section">
                 <button id="start-loop">Start Loop</button>
                 <input type="number" id="loop-count" placeholder="Number of Iterations">
             </div>
 
-            <!-- Dropdown for selecting loop operations -->
+            
             <h3>Loop Operations</h3>
             <div>
                 <select id="loop-operations" multiple>
@@ -79,7 +79,7 @@
                 </select>
             </div>
 
-            <!-- Looks controls -->
+            
             <h3>Looks</h3>
             <div class="control-section">
                 <input type="text" id="say-message" placeholder="Enter message">
@@ -92,8 +92,7 @@
                 <button id="think">Think</button>
             </div>
 
-            <!-- Sound controls -->
-                  <!-- Sound controls -->
+           
         <h3>Sound</h3>
         <div>
         <select id="sound-select">
@@ -104,18 +103,14 @@
         <button id="stop-sound">Stop All Sounds</button>
         </div>
 
-        <!-- Size input and button -->
+        
         
         <div class="control-group">
             <label for="size-input">Character Size:</label>
             <input type="number" id="size-input" min="10" placeholder="Enter size (px)">
             <button id="change-size-button">Change Size</button>
-        </div>
-
-
-        
-
-            <!-- Conditions Section -->
+        </div>        
+            
             <div class="control-group">
                 <label for="wait-input">Wait Time (seconds):</label>
                 <input type="number" id="wait-input" min="0" placeholder="Enter wait time (seconds)">
@@ -126,7 +121,7 @@
                 Waiting <span id="wait-time">0</span> seconds...
             </div>            
             
-                        <!-- Condition Checker Section -->
+                        
             <h3>Conditions</h3>
             <div id="condition-checker" class="control-section">
                 <input type="text" id="condition-input" placeholder="Enter condition">
@@ -135,7 +130,7 @@
             </div>          
 
 
-                <!-- Variables controls -->
+                
             <h3>Variables</h3>
             <div class="control-section">
                 <button id="set-variable">Set Variable</button>
@@ -188,14 +183,21 @@
                 <span>Blue Cat</span>
             </div>
             
-            <div class="asset" draggable="true" id="forest" data-image="forest.png">
-                <img src="forest.png" alt="Forest">
-                <span>Forest</span>
+            <div>
+                <h2>Workspace Backgrounds</h2>
+                <div class="backgrounds-container">
+                    <div class="asset" draggable="true" id="forest" data-image="forest.png">
+                        <img src="forest.png" alt="Forest">
+                        <span>Forest</span>
+                    </div>
+                    <div class="asset" draggable="true" id="ocean" data-image="ocean.png">
+                        <img src="ocean.png" alt="Ocean">
+                        <span>Ocean</span>
+                    </div>
+                </div>
             </div>
             
-            
-        
-        <!-- Add this section to your HTML -->
+
 <div id="saved-actions">
     <h2>Saved Actions</h2>
     <ul id="actions-list"></ul>
@@ -213,7 +215,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
