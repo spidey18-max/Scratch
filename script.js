@@ -867,4 +867,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+const checkLengthButton = document.getElementById('check-length');
+const lengthOutput = document.getElementById('length-output');
+const joinStringsButton = document.getElementById('join-strings');
+const concatenationOutput = document.getElementById('concatenation-output');
 
+checkLengthButton.addEventListener('click', () => {
+    const userInput = document.getElementById('string-input').value;
+    lengthOutput.textContent = `Length: ${userInput.length}`;
+});
+
+joinStringsButton.addEventListener('click', () => {
+    const string1 = document.getElementById('string1').value;
+    const string2 = document.getElementById('string2').value;
+    concatenationOutput.textContent = `Joined String: ${string1 + string2}`;
+});
+
+const checkCharButton = document.getElementById('check-char-button');
+const charOutput = document.getElementById('char-output');
+
+checkCharButton.addEventListener('click', () => {
+    const userString = document.getElementById('check-string').value;
+    const userChar = document.getElementById('check-char').value;
+
+    // Check if a single character is provided
+    if (userChar.length !== 1) {
+        charOutput.textContent = 'Please enter a single character.';
+        return;
+    }
+
+    const isPresent = userString.includes(userChar);
+    charOutput.textContent = `Character "${userChar}" present: ${isPresent}`;
+});
