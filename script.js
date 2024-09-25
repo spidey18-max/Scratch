@@ -839,3 +839,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const workspace = document.getElementById('workspace');
+    const assets = document.querySelectorAll('.asset');
+    
+    assets.forEach(asset => {
+        asset.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.id);
+        });
+    });
+
+    workspace.addEventListener('dragover', (e) => {
+        e.preventDefault(); // Allow drop
+    });
+
+    workspace.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData('text/plain');
+        const droppedElement = document.getElementById(id);
+        
+        if (droppedElement && droppedElement.id === 'ocean') {
+            workspace.style.backgroundImage = 'url(ocean.png)';
+            workspace.style.backgroundSize = 'cover'; // Optional, to cover the whole area
+        }
+    });
+});
+
+
